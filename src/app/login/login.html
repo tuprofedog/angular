@@ -1,1 +1,47 @@
-<p>login works!</p>
+<div class="container">
+    <div class="left-container">
+        <div class="logo-container">
+            <img src="login logo.gif" alt="Logo">
+        </div>
+
+        <div class="form-container">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <h1>Portal de Proveedores y Socios Comerciales</h1>
+                <h3>Escribe tu correo y contraseña:</h3>
+
+                <mat-form-field>
+                    <mat-label>Correo electrónico</mat-label>
+                    <input matInput placeholder="zorro@example.com"
+                        formControlName="email" type="email" required>
+
+                    @if (form.controls.email.invalid && form.controls.email.touched) {
+                        <mat-error>{{emailMessage()}}</mat-error>
+                    }
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput [type]="hide() ? 'password' : 'text'"
+                        formControlName="password" type="password" required>
+                    <button
+                        matIconButton
+                        matSuffix
+                        (click)="clickEvent($event)"
+                        [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide()"
+                        >
+                        <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+
+                    @if (form.controls.password.invalid && form.controls.password.touched) {
+                        <mat-error>{{passwordMessage()}}</mat-error>
+                    }
+                </mat-form-field>
+
+                <button type="submit" matButton="filled">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="right-container"></div>
+</div>

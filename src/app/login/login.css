@@ -1,0 +1,65 @@
+form,
+.container,
+.form-container,
+.left-container,
+.right-container,
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    align-items: stretch;
+}
+
+.container {
+    height: 100%;
+    flex-direction: row-reverse;
+}
+
+.left-container,
+.right-container {
+    width: 50%;
+    height: 100%;
+}
+
+.right-container {
+    background-image: url('/login bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+:host ::ng-deep .mat-mdc-form-field {
+    margin-bottom: 1rem;
+}
+
+.form-container {
+    width: 75%;
+}
+
+.logo-container {
+    width: 100%;
+    height: 25%;
+}
+
+.logo-container img {
+    width: auto;
+    height: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .left-container {
+        width: 75%;
+    }
+
+    .right-container {
+        display: none;
+    }
+
+    .form-container {
+        width: 100%;
+    }
+}
