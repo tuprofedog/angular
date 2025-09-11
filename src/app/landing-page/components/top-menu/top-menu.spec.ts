@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TopMenu } from './top-menu';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('TopMenu', () => {
   let component: TopMenu;
@@ -8,7 +9,8 @@ describe('TopMenu', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TopMenu]
+      imports: [TopMenu],
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 
