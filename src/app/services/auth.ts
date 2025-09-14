@@ -7,12 +7,13 @@ import { isPlatformBrowser } from '@angular/common';
 
 import { User } from '../models/user';
 import { Auth } from '../models/auth';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private _uriBase = 'http://localhost:3000/api/';
+  private _uriBase = environment.apiUrl;
   private _uriLogin = this._uriBase + 'login';
   
   private isBrowser: boolean;
