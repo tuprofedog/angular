@@ -28,7 +28,11 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "polyfills": [
+              "@angular/localize/init"
+            ],
+            "localize": true
           },
           "configurations": {
             "production": {
@@ -50,6 +54,9 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "en": {
+              "localize": ["en"]
             }
           },
           "defaultConfiguration": "production"
@@ -62,6 +69,9 @@
             },
             "development": {
               "buildTarget": "ecommerce:build:development"
+            },
+            "en": {
+              "buildTarget": "ecommerce:build:development,en"
             }
           },
           "defaultConfiguration": "development"
@@ -81,8 +91,17 @@
             ],
             "styles": [
               "src/styles.css"
+            ],
+            "polyfills": [
+              "@angular/localize/init"
             ]
           }
+        }
+      },
+      "i18n": {
+        "sourceLocale": "es",
+        "locales": {
+          "en": "src/locale/messages.en.xlf"
         }
       }
     }

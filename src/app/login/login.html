@@ -6,11 +6,11 @@
 
         <div class="form-container">
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                <h1>Portal de Proveedores y Socios Comerciales</h1>
-                <h3>Escribe tu correo y contraseña:</h3>
+                <h1 i18n>Portal de Proveedores y Socios Comerciales</h1>
+                <h3 i18n>Escribe tu correo y contraseña:</h3>
 
                 <mat-form-field>
-                    <mat-label>Correo electrónico</mat-label>
+                    <mat-label i18n>Correo electrónico</mat-label>
                     <input matInput placeholder="zorro@example.com"
                         formControlName="email" type="email" required>
 
@@ -20,7 +20,7 @@
                 </mat-form-field>
 
                 <mat-form-field>
-                    <mat-label>Contraseña</mat-label>
+                    <mat-label i18n="Campo del formulario para la contraseña">Contraseña</mat-label>
                     <input matInput [type]="hide() ? 'password' : 'text'"
                         formControlName="password" type="password" required>
                     <button
@@ -38,7 +38,7 @@
                     }
                 </mat-form-field>
 
-                <button type="submit" matButton="filled">Iniciar Sesión</button>
+                <button type="submit" matButton="filled" i18n>Iniciar Sesión</button>
             </form>
         </div>
     </div>
